@@ -8,10 +8,12 @@ settings = get_settings()
 
 engine = create_engine(
     settings.DATABASE_URL,
-    pool_pre_ping=True,          
-    pool_size=5,                
+    pool_pre_ping=True,
+    pool_size=5,
     max_overflow=10,
-    echo=settings.DEBUG         
+    pool_timeout=30,
+    connect_args={"connect_timeout": 10},
+    echo=settings.DEBUG
 )
 
 SessionLocal = sessionmaker(
