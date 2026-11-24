@@ -15,3 +15,4 @@ class Activity(Base):
 
     
     user = relationship("User", back_populates="activities")
+    
