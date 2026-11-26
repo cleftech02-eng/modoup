@@ -1,12 +1,7 @@
-
 from google.oauth2 import id_token
 from google.auth.transport import requests
-
 from config import get_settings
-
 settings = get_settings()
-
-
 def verify_google_token(token: str):
     """
     Verify a Google ID token and return the user's information.

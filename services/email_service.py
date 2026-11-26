@@ -1,19 +1,11 @@
-
 import secrets
 import hashlib
-
 from datetime import datetime, timedelta, timezone
 from email.message import EmailMessage
 import smtplib
-
 from config import get_settings
 
 settings = get_settings()
-
-
-# ==========================================
-# EMAIL VERIFICATION
-# ==========================================
 
 def generate_verification_token() -> str:
     return secrets.token_urlsafe(32)

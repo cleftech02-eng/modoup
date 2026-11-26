@@ -1,10 +1,6 @@
-
 from datetime import datetime, timedelta, timezone
-
 from jose import JWTError, jwt
-
 from config import get_settings
-
 settings = get_settings()
 
 def create_access_token(user_id: int) -> str:

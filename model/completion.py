@@ -11,7 +11,6 @@ class LessonCompletion(Base):
     user_id: Mapped[int] = mapped_column(ForeignKey("users.id"))
     lesson_id: Mapped[int] = mapped_column(ForeignKey("lessons.id"))
     completed_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow)
-
     # Prevent the same user from completing the same lesson twice
     __table_args__ = (
         UniqueConstraint("user_id", "lesson_id", name="unique_user_lesson"),
